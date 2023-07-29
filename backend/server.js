@@ -1,6 +1,15 @@
 const express = require("express")
+const cors = require("cors")
 const app = express()
 const tasks = []
+
+app.use(cors(
+  {
+    origin: [],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+))
 
 app.use(express.json());
 
