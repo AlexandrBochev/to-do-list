@@ -5,8 +5,8 @@ const tasks = []
 
 app.use(cors(
   {
-    origin: [],
-    methods: ["POST", "GET"],
+    origin: ["https://to-do-list-frontend-pi.vercel.app"],
+    methods: ["POST", "GET", "DELETE"],
     credentials: true
   }
 ))
