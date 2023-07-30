@@ -13,7 +13,7 @@ const TaskList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('https://to-do-list-rho-wheat.vercel.app/tasks');
+      const response = await fetch('api/tasks');
       if (!response.ok) {
         throw new Error('Failed to fetch tasks');
       }
@@ -26,7 +26,7 @@ const TaskList = () => {
 
   const addTask = async (newTask: ITask) => {
     try {
-      const response = await fetch('https://to-do-list-rho-wheat.vercel.app/tasks', {
+      const response = await fetch('api/tasks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const TaskList = () => {
 
   const delTask = async (id: number) => {
     try {
-      const response = await fetch(`https://to-do-list-rho-wheat.vercel.app/tasks/${id}`, {
+      const response = await fetch(`api/tasks/${id}`, {
         method: 'DELETE',
       });
       
