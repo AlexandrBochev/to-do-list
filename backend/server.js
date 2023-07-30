@@ -1,15 +1,15 @@
 const express = require("express")
-const cors = require("cors")
+// const cors = require("cors")
 const app = express()
 const tasks = []
 
-app.use(cors(
-  {
-    origin: ["https://to-do-list-frontend-pi.vercel.app"],
-    methods: ["POST", "GET", "DELETE"],
-    credentials: true
-  }
-))
+// app.use(cors(
+//   {
+//     origin: ["https://to-do-list-frontend-pi.vercel.app"],
+//     methods: ["POST", "GET"],
+//     credentials: true
+//   }
+// ))
 
 app.use(express.json());
 
