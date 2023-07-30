@@ -14,7 +14,7 @@ const TaskList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch(url);
+      const response = await fetch(`${url}/api/tasks`);
       if (!response.ok) {
         throw new Error('Failed to fetch tasks');
       }
@@ -27,7 +27,7 @@ const TaskList = () => {
 
   const addTask = async (newTask: ITask) => {
     try {
-      const response = await fetch(url, {
+      const response = await fetch(`${url}/api/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
