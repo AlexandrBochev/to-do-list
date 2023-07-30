@@ -6,6 +6,7 @@ import TaskForm from "./TaskForm";
 const TaskList = () => {
   const [tasks, setTasks] = useState<ITask[]>([])
   const [modal, setModal] = useState(false)
+  const url = 'https://to-do-list-rho-wheat.vercel.app'
 
   useEffect(() => {
     fetchTasks()
@@ -13,7 +14,7 @@ const TaskList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('api/tasks');
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Failed to fetch tasks');
       }
@@ -26,7 +27,7 @@ const TaskList = () => {
 
   const addTask = async (newTask: ITask) => {
     try {
-      const response = await fetch('api/tasks', {
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +49,7 @@ const TaskList = () => {
 
   const delTask = async (id: number) => {
     try {
-      const response = await fetch(`api/tasks/${id}`, {
+      const response = await fetch(`${url}/api/tasks/${id}`, {
         method: 'DELETE',
       });
       
